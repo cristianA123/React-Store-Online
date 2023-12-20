@@ -9,6 +9,7 @@ import { SigIn } from '../SignIn';
 import { useRoutes, BrowserRouter } from 'react-router-dom'
 
 import './App.css'
+import { NavBar } from '../../components/Navbar';
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -47,6 +48,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <AppRoutes />
+      <NavBar />
     </BrowserRouter>
   )
 }
