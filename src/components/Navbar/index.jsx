@@ -1,10 +1,13 @@
+import { useContext } from "react"
 import { NavLink } from "react-router-dom"
+import { ShoppingCardContext } from "../../Context"
 
+import { ShoppingBagIcon } from '@heroicons/react/24/solid'
 
 export const NavBar = () => {
 
   const asctiveStyle = 'underline  underline-offset-4'
-
+  const context = useContext(ShoppingCardContext)
 
   return (
     <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light">
@@ -76,12 +79,11 @@ export const NavBar = () => {
             }
             >Sign In</NavLink>
         </li>
-        <li>
-          <NavLink to="/electronics"
-            className={({ isActive }) =>
-              isActive ? asctiveStyle : undefined
-            }
-            >🚗0</NavLink>
+        <li className='flex items-center justify-center'>
+          <ShoppingBagIcon className="h-6 w-6 text-blue-500" />
+          <div>
+            { ' ' + context.count}
+          </div>
         </li>
 
 
